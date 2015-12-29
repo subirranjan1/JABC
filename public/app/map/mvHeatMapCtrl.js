@@ -175,12 +175,12 @@ angular.module('app').controller('mvHeatMapCtrl', function($scope,$http) {
                     }
                 }],
         });
-        google.maps.event.addListener(window.layer_1, 'click', function(e) {
-            console.log('e',e);
-            var str=e.row.School.value;
-            $("#content").html(str);
-
-        });
+        //google.maps.event.addListener(window.layer_1, 'click', function(e) {
+        //    console.log('e',e);
+        //    var str=e.row.School.value;
+        //    $("#content").html(str);
+        //
+        //});
 
     };
 
