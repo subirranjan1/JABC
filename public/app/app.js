@@ -7,7 +7,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     });
     $routeProvider
         .when('/', { templateUrl: '/partials/main-schoolnotreached',controller:'mvSchoolNotReachedCtrl'})
-        .when('/HeatMap', { templateUrl: '/partials/main-heatmap', controller: 'mvHeatMapCtrl'})
+        .when('/School2015', { templateUrl: '/partials/main-heatmap', controller: 'mvHeatMapCtrl'})
         .when('/Chart', { templateUrl: '/partials/main-chart', controller: 'mvChartCtrl'})
         .when('/DistrictMap', { templateUrl: '/partials/main-districtmap', controller: 'mvDistrictMapCtrl'});
 });

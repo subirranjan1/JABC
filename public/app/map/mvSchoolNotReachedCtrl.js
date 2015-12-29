@@ -4,7 +4,7 @@ angular.module('app').controller('mvSchoolNotReachedCtrl', function($scope) {
     };
 
     $("#wrapper").append('<input id="pac-input" type="text" placeholder="Search Box" class="controls">');
-    $("#wrapper").append('<div><select id="legend"> <option value="">--Select--</option> <option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option> <option value="2015">2015</option></select></div>');
+    $("#wrapper").append('<div><select id="legend"> <option value="">--Select Year--</option> <option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option> <option value="2015">2015</option></select></div>');
 
     function initialize() {
         var tableId = '1-k-EwF6WKlmehVPml1q8zPjrqI_Fxm-kfTiS0eTZ';
@@ -40,7 +40,7 @@ angular.module('app').controller('mvSchoolNotReachedCtrl', function($scope) {
             $scope.hideLeftSideBar();
         });
 
-        window.map.controls[google.maps.ControlPosition.RIGHT_TOP].push(
+        window.map.controls[google.maps.ControlPosition.TOP_CENTER].push(
             document.getElementById('legend'));
 
 
@@ -113,9 +113,24 @@ angular.module('app').controller('mvSchoolNotReachedCtrl', function($scope) {
                 select: locationColumn,
                 from: tableId
             },
+            styles: [
+                { where: "",
+                    markerOptions: {
+                        iconName: 'small_red'
+                    }
+                }],
             map: map
         });
-
+        //window.layer_2 = new google.maps.FusionTablesLayer({
+        //    query: {
+        //        select: "School Name",
+        //        from: "1VOA48Jwn7NPYsxEuitp9wrpoitQ1iVWLFrpf-ziN"
+        //    },
+        //    map: map,
+        //    optimized: false,
+        //    styleId: 1,
+        //    templateId: 2
+        //});
         google.maps.event.addDomListener(document.getElementById('legend'),
             'change', function() {
                 updateMap(layer, tableId, locationColumn);
